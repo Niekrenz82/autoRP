@@ -10,6 +10,18 @@ requires-python = ">=3.13"
 dependencies = [
     "glum>=3.4.1",
     "mlflow>=3.16.1",
+    "pandas>=3.0.6",
     "pathlib>=1.0.1",
+    "pyarrow>=25.0.1",
     "scikit-learn>=1.9.1",
 ]
+
+[dependency-groups]
+dev = ["ipykernel"]      # NEW: lets notebooks use .venv; only needed while developing
+
+[build-system]           # NEW: makes autorp installable
+requires = ["uv_build>=0.12.17,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]  # NEW: code is in autorp/, not the default src/autorp/
+module-root = ""
