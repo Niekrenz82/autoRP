@@ -1,0 +1,13 @@
+[project]
+name = "autorp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Niekrenz82", email = "cuniekrenz@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "glum>=3.4.1",
+    "scikit-learn>=1.9.1",
+]
