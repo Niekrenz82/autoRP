@@ -3,3 +3,5 @@
 - This project is for my CV, so I want to understand what is going on. Explain what you implement and why.
 
 - I want to understand everything that is happening — ask before running commands or creating files, and explain what each step does and why, rather than just doing it and summarizing afterward.
+
+- Please keep responses as short as possible, while remaining coherent. 
