@@ -5,3 +5,7 @@
 - I want to understand everything that is happening — ask before running commands or creating files, and explain what each step does and why, rather than just doing it and summarizing afterward.
 
 - Please keep responses as short as possible, while remaining coherent. 
+
+- Make small cohearent and meaning full commmits.
+
+- I will make a baseline model, this is just to have a baseline eval for the agent later on. Everything else should be general to a unknown dataset, that will be the input.
