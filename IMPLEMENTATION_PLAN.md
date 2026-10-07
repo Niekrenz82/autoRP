@@ -14,8 +14,8 @@ coefficients directly.
 - [x] `uv` project initialized, `glum` and `scikit-learn` added as dependencies
 - [x] Folder scaffolding created (`data/`, `scripts/`, `autorp/`, `configs/candidates/`,
       `notebooks/`, `tests/`)
-- [ ] Add MLflow: `uv add mlflow`
-- [ ] Decide tracking URI location (`sqlite:///mlflow.db` at project root) and add
+- [x] Add MLflow: `uv add mlflow`
+- [x] Decide tracking URI location (`sqlite:///mlflow.db` at project root) and add
       `mlflow.db` + `mlruns/` to `.gitignore`
 
 ## Phase 1 — Data
@@ -32,16 +32,16 @@ coefficients directly.
 
 ## Phase 2 — Baseline model
 
-- [ ] `autorp/tracking.py` — sets the MLflow tracking URI, exposes small helpers:
-      `log_glm_run(model, params, metrics, name)`, `get_baseline(name)`,
-      `promote(model_name, version)`
-- [ ] Define the baseline GLM spec: Poisson GLM on a small, obviously-relevant
+- [x] `autorp/tracking.py` — sets the MLflow tracking URI (absolute path, so notebooks
+      don't create a second store), exposes `setup()`, `promote(model_name, version, alias)`,
+      `load_model(model_name, alias)`
+- [x] Define the baseline GLM spec: Poisson GLM on a small, obviously-relevant
       feature set (e.g. driver age, vehicle power, region), log-exposure offset,
       no interactions, no regularization tuning
-- [ ] Fit it, log params/metrics (deviance, AIC/BIC, Gini, lift-decile table) and
-      the model itself to MLflow via `mlflow.sklearn.log_model(...,
-      registered_model_name="pnc-pricing-baseline")`
-- [ ] Tag/alias this registered version as the baseline (e.g. MLflow alias
+- [x] Fit it, log params/metrics (deviance, D², Gini, A/E, lift-decile table) and
+      the model itself to MLflow as a pyfunc (`autorp/pricing_model.py`: freq GLM ×
+      sev GLM × large-loss loading), `registered_model_name="pnc-pricing-baseline"`
+- [x] Tag/alias this registered version as the baseline (e.g. MLflow alias
       `baseline`)
 
 **Done when:** `pnc-pricing-baseline` exists in the MLflow registry with one
